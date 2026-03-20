@@ -7,7 +7,29 @@ The project is structured to **learn SQL** by implementing queries and database 
 
 > **IMPORTANT**: Object Relational Model (ORM) based queries are **not allowed** for any task. **All queries must be written using raw SQL statements without any Python-based processing.**
 
----
+<br><br><br>
+
+# Updating Your Code for PA 1.2
+Before you start PA 1.2, you need to update your existing code with the latest changes. You can do this in one of two ways:
+
+1. **Using Git:**
+   - Open your terminal.
+   - Navigate to your project directory using the command:
+     ```bash
+     cd <path to your project directory>
+     ```
+   - Run the following command to pull the latest changes:
+     ```bash
+     git pull
+     ```
+
+2. **Manually Downloading the Update:**
+   - Visit the [MotionPictureDb GitHub repository](https://github.com/SSD-Brandeis/MotionPictureDb).
+   - Click the green **"Code"** button.
+   - Select **"Download ZIP"** to get the updated code.
+
+
+<br><br><br>
 
 ## **1. Pre-Requisites**
 - **Python (3.10 or later)**
@@ -19,21 +41,22 @@ The project is structured to **learn SQL** by implementing queries and database 
 ---
 
 ## **2. Project Setup Instructions**
+> **IMPORTANT**: If your **database is already set up and populated**, you can skip the initial setup steps in this section and jump to Section 3.
 
 ### **Step 1: Install and Configure MariaDB**
 1. **Installation**  
    > **NOTE**: If you have already set up MariaDB for Written Assignment 2, you may skip the first two sections (*Installation* and *Starting the MariaDB Server*).
 
    Choose the appropriate installation method for your operating system:
-    - **MacOS (Homebrew)**  
+   - **MacOS (Homebrew)**  
       ```bash
       brew install mariadb
       ```
-    - **Ubuntu/Debian**  
+   - **Ubuntu/Debian**  
       ```bash
       sudo apt install mariadb-server
       ```
-    - **Windows**  
+   - **Windows**  
       Download and install from [MariaDB Official Website](https://mariadb.org/).
 
 2. **Start MariaDB Server**
@@ -69,9 +92,9 @@ The project is structured to **learn SQL** by implementing queries and database 
 
 ### **Step 2: Clone or Download the Project**
 - Clone the repository using:
-  ```bash
-  git clone https://github.com/SSD-Brandeis/IMDbDatabase
-  ```
+```bash
+git clone https://github.com/SSD-Brandeis/IMDbDatabase
+```
 - Or download it manually from [GitHub](https://github.com/SSD-Brandeis/IMDbDatabase) by clicking the green "Code" button → **Download ZIP**.
 
 ---
@@ -133,20 +156,7 @@ Once your database is set up and populated with sample data, follow these steps 
 ---
 
 ## **3. Implementing SQL Queries**
-The project requires students to **write raw SQL queries** for two functionalities.
-
-### **Task 1: Understanding Database Interactions**
-- Familiarize yourself with `database.py`, which handles all database queries.
-- See how `execute()` is used to interact with the database.
-
-### **Task 2: Fetching and Displaying Actors**
-Modify the function inside `actors.py` to fetch all actors' details from the database.
-- Replace `query = """ """` with an SQL query to **fetch `name`, `nationality`, `dob`, and `gender` from `People`**.
-
-### **Task 3: Implementing Movie Likes Feature**
-Modify the function inside `movies.py` to allow users to like a movie.
-- Replace `query = """ """` with an SQL query to insert a like.
-- Use the `Database.execute()` function correctly with parameters.
+The project requires students to **write 18 raw SQL queries** in `queries.py`. Each query corresponds to a specific question (Q1-Q20) that tests your understanding of SQL concepts. May sure you load the databse from `data/data2.sql` before you start implementing the queries, as some of the queries require data from that file.
 
 ---
 
@@ -154,33 +164,25 @@ Modify the function inside `movies.py` to allow users to like a movie.
 If you encounter issues, use the following commands:
 
 - **Truncate table data** (removes all rows but keeps table structure):
-  ```sql
-  TRUNCATE TABLE <table_name>;
-  ```
+```sql
+TRUNCATE TABLE <table_name>;
+```
 - **Drop table and recreate**:
-  ```sql
-  DROP TABLE <table_name>;
-  ```
+```sql
+DROP TABLE <table_name>;
+```
 - **Fix foreign key constraint errors when truncating/deleting**:
-  ```sql
-  SET FOREIGN_KEY_CHECKS=0;
-  TRUNCATE TABLE <table_name>;
-  SET FOREIGN_KEY_CHECKS=1;
-  ```
+```sql
+SET FOREIGN_KEY_CHECKS=0;
+TRUNCATE TABLE <table_name>;
+SET FOREIGN_KEY_CHECKS=1;
+```
 
 ---
 
 ## **5. Submission Guidelines**
-1. **Complete the missing SQL queries** in `actors.py` and `movies.py`.
+1. **Complete the missing SQL queries** in `queries.py`.
 2. **Ensure your application runs without errors** and the database is correctly set up.
 
 To verify:
-- Run `python run.py` and check if **movies and actors display correctly**.
-- Test if users can **like a movie**.
-
----
-
-## **Final Notes**
-- Do **not** modify `database.py` logic.
-- Ensure your `.sql` queries execute correctly before implementing them in Flask.
-- **Queries in `queries.py` will be used for future assignments. Do not modify this file now.**
+- Run `python run.py` and check if **all Q1-Q20 queries work correctly**.
