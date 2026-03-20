@@ -95,7 +95,7 @@ def find_youngest_oldest_actors():
     #              Age must be computed using the actor’s date of birth and the award-year only. 
     #              In case of a tie, list all tied actors.
 
-    query = """SELECT p.name, YEAR(a.award_year) - YEAR(p.dob) as age FROM People p JOIN Award a ON p.id = a.pid JOIN Role r ON p.id = r.pid WHERE r.role_name = 'Actor'"""
+    query = """SELECT p.name, a.award_year - YEAR(p.dob) as age FROM People p JOIN Award a ON p.id = a.pid JOIN Role r ON p.id = r.pid AND a.mpid = r.mpid WHERE r.role_name = 'Actor'"""
 
     with Database() as db:
         actors = db.execute(query)
