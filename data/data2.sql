@@ -41,7 +41,7 @@ INSERT INTO MotionPicture (id, NAME, rating, production, budget) VALUES
 (212, 'The Godfather', 9.2, 'Paramount Pictures', 6000000),
 (213, 'The Dark Knight Rises', 8.4, 'Warner Bros', 250000000);
 
-INSERT INTO User (email, NAME, age) VALUES
+INSERT INTO Users (email, NAME, age) VALUES
 -- ('aneesha@fb.com', 'Aman Aneesh', 25),
 -- ('ssarkar@bu.edu', 'Simone Sarkar', 23),
 -- ('jamiel@gmail.com', 'Jamie Vardy', 29),
